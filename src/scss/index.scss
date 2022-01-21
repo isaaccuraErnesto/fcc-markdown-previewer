@@ -10,14 +10,20 @@ body {
   color: $secondary-color;
   background-color: $primary-color;
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  // overflow: hidden;
+  height: 100vh;
+}
+
+.App,
+#root {
+  height: 100%;
 }
 
 #title {
   position: relative;
   width: fit-content;
   margin-inline: auto;
-  margin-block: 4vh;
+  padding-block: 4vh;
   background-color: $primary-color;
   padding-inline: 20px;
 }
@@ -28,7 +34,7 @@ body {
   height: 1px;
   width: 100vw;
   background-color: $secondary-color;
-  top: 18px;
+  top: calc(18px + 4vh);
   left: calc(-50vw + (358.35px / 2));
   z-index: -1;
 }
@@ -40,23 +46,26 @@ body {
   background-color: $primary-color;
 }
 
-%container {
+.regular {
   background-color: $primary-color;
   width: 45%;
   height: 75vh;
   border-radius: 5px;
   font-size: 1em;
   border: $border;
+  overflow: hidden;
 }
 
-#editor-container {
-  @extend %container;
-}
-#preview-container {
-  @extend %container;
+.expanded {
+  @extend .regular;
+  width: 90%;
 }
 
-%toolbar {
+.hidden {
+  display: none;
+}
+
+.toolbar {
   padding-inline: 15px;
   padding-block: 5px;
   display: flex;
@@ -69,15 +78,12 @@ body {
   border-bottom: $border;
 }
 
-#editor-toolbar {
-  @extend %toolbar;
+.expander:hover {
+  color: $primary-color;
+  cursor: pointer;
 }
 
-#preview-toolbar {
-  @extend %toolbar;
-}
-
-%content-window {
+.content-window {
   width: 100%;
   height: calc(75vh - 40px);
   padding: 15px;
@@ -86,13 +92,11 @@ body {
 }
 
 #editor {
-  @extend %content-window;
   font-family: monospace, Arial, Helvetica, sans-serif;
   resize: none;
 }
 
 #preview {
-  @extend %content-window;
   background-color: #000;
   color: #fff;
   overflow: auto;
@@ -150,5 +154,85 @@ body {
   img {
     width: 100%;
     padding: 50px;
+  }
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: $tertiary-color;
+  color: $secondary-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 5%;
+  padding-block: 5px;
+  font-size: 85%;
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+// RWD Tweaks
+@media only screen and (max-width: 700px) {
+  #main-container {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 150vh;
+    padding-bottom: 10vh;
+  }
+
+  .regular {
+    width: 90%;
+    height: 65vh;
+  }
+
+  .content-window {
+    height: calc(65vh - 40px);
+  }
+
+  .toolbar-tools {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 450px) {
+  .regular {
+    height: 65vh;
+  }
+
+  .content-window {
+    height: calc(65vh - 40px);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #footer {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 70%;
+    height: 4em;
+  }
+}
+
+//Mobile Tweaks
+@media only screen and (max-device-width: 300px) {
+  #title {
+    font-size: 1.5em;
+  }
+
+  #title::after {
+    display: none;
   }
 }
