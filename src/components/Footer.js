@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div id='footer'>
-      <div id='copyright-notice'>Copyright &copy; 2022 Ernesto Isaaccura</div>
+      <div id='copyright-notice'>Copyright &copy; 2022 ernestoIsaaccura</div>
       <div id='website-author'>
         Website by{' '}
         <a
