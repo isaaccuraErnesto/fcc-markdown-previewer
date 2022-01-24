@@ -38,7 +38,7 @@ text-decoration: line-through;
 
 I convinced you, didn't I? Go learn more about markdown by clicking on that link above!
 
-![freeCodeCamp Logo](/img/fcc_primary_large.png)`;
+![freeCodeCamp Logo](https://d33wubrfki0l68.cloudfront.net/52edd2dfddbec5db22a65dba39951af8fa9bdff6/006f7/img/fcc_primary_large.svg)`;
 
   const [editorContent, setEditorContent] = useState({
     markdownText: initialContent,
