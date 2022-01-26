@@ -18,6 +18,7 @@ The app was built using a combination of the following languages/libraries/frame
 
 - React
 - Sass
+- Marked
 - JavaScript
 - CSS
 - HTML
@@ -26,11 +27,12 @@ The app was built using a combination of the following languages/libraries/frame
 
 ### PC View
 
-![Main PC View]()
+![Main PC View](https://i.imgur.com/clk4YMT.jpg?1 "Main PC View")
 
 ### Mobile View
 
-![Main Mobile View]()
+![Top Mobile View](https://i.imgur.com/WN7pNZH.png?2 "Top Mobile View")
+![Bottom Mobile View](https://i.imgur.com/Jd91B2z.png?1 "Bottom Mobile View")
 
 ## Task Description
 
